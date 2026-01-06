@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Générateur de mot de passe sécurisé et personnalisable">
+    <title>Générateur de Mot de Passe</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">
+                <span class="icon">🔐</span>
+                Générateur de Mot de Passe
+            </h1>
+            <p class="subtitle">Créez des mots de passe sécurisés en un clic</p>
+        </header>
+
+        <main class="main-content">
+            <div class="password-display">
+                <div class="password-wrapper">
+                    <input 
+                        type="text" 
+                        id="passwordOutput" 
+                        class="password-output" 
+                        readonly 
+                        value="Votre mot de passe apparaîtra ici"
+                    >
+                    <button 
+                        id="copyButton" 
+                        class="copy-button" 
+                        aria-label="Copier le mot de passe"
+                        title="Copier"
+                    >
+                        <span class="copy-icon">📋</span>
+                        <span class="copy-text">Copier</span>
+                    </button>
+                </div>
+                <div class="strength-indicator">
+                    <div class="strength-bar" id="strengthBar"></div>
+                    <span class="strength-text" id="strengthText">Force: -</span>
+                </div>
+            </div>
+
+            <div class="controls">
+                <div class="control-group">
+                    <label for="lengthSlider" class="control-label">
+                        Longueur: <span id="lengthValue">12</span>
+                    </label>
+                    <input 
+                        type="range" 
+                        id="lengthSlider" 
+                        class="slider" 
+                        min="4" 
+                        max="32" 
+                        value="12"
+                    >
+                </div>
+
+                <div class="options-group">
+                    <label class="option-item">
+                        <input type="checkbox" id="uppercase" checked>
+                        <span class="checkmark"></span>
+                        <span class="option-text">Majuscules (A-Z)</span>
+                    </label>
+                    <label class="option-item">
+                        <input type="checkbox" id="lowercase" checked>
+                        <span class="checkmark"></span>
+                        <span class="option-text">Minuscules (a-z)</span>
+                    </label>
+                    <label class="option-item">
+                        <input type="checkbox" id="numbers" checked>
+                        <span class="checkmark"></span>
+                        <span class="option-text">Chiffres (0-9)</span>
+                    </label>
+                    <label class="option-item">
+                        <input type="checkbox" id="symbols" checked>
+                        <span class="checkmark"></span>
+                        <span class="option-text">Symboles (!@#$%...)</span>
+                    </label>
+                </div>
+
+                <button id="generateButton" class="generate-button">
+                    <span class="button-text">Générer</span>
+                    <span class="button-icon">✨</span>
+                </button>
+            </div>
+
+            <div class="notification" id="notification"></div>
+        </main>
+
+        <footer class="footer">
+            <p>Générateur de mot de passe sécurisé &copy; 2024</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
